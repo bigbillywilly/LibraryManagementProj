@@ -8,6 +8,10 @@ public abstract class User {
 	private int id;
 	private static int nextID = 1;
 
+	/**
+	* Constructor that takes a name, username and email to create a User.
+	* Auto creates IDs that increment from 1.
+	*\
 	public User(String name, String username, String email) {
 		this.id = nextID++;
 		this.username = username;
