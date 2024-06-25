@@ -7,6 +7,9 @@ public abstract class User {
 	private String name;
 	private int id;
 
+	/**
+	* Constructor for a user that takes an id, name, usernawme, and email.
+	*\
 	public User(int id, String name, String username, String email) {
 		this.id = id;
 		this.username = username;
