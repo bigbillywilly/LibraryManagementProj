@@ -1,19 +1,23 @@
 package libraryManageProj;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public abstract class User {
 
 	private String username;
 	private String email;
 	private String name;
-	private int id;
-	private static int nextID = 1;
+	private final int id;
+	private static AtomicInteger nextID = new AtomicInteger(1);
 
 	/**
-	* Constructor that takes a name, username and email to create a User.
-	* Auto creates IDs that increment from 1.
-	*\
+	 * Constructor to create a user with name, username, and email, auto implements ID number by using a AtomicInteger
+	 * @param name
+	 * @param username
+	 * @param email
+	 */
 	public User(String name, String username, String email) {
-		this.id = nextID++;
+		this.id = nextID.getAndIncrement();
 		this.username = username;
 		this.email = email;
 		this.name = name;
@@ -24,13 +28,6 @@ public abstract class User {
 	 */
 	public int getId() {
 		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -75,26 +72,4 @@ public abstract class User {
 		this.name = name;
 	}
 
-	/**
-	 * 
-	 */
-	public void updateName(String name) {
-		this.setName(name);	
-	}
-	/**
-	 * Updates user's username.
-	 * 
-	 * @param username
-	 */
-	public void updateUsername(String username) {
-		this.setUsername(username);
-	}
-
-	/**
-	 * Updates user's email.
-	 * @param email
-	 */
-	public void updateEmail(String email) {
-		this.setEmail(email);
-	}
 }
