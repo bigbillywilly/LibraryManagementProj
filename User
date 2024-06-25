@@ -1,0 +1,95 @@
+package libraryManageProj;
+
+public abstract class User {
+
+	private String username;
+	private String email;
+	private String name;
+	private int id;
+
+	public User(int id, String name, String username, String email) {
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.name = name;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * 
+	 */
+	public void updateName(String name) {
+		this.setName(name);	
+	}
+	/**
+	 * Updates user's username.
+	 * 
+	 * @param username
+	 */
+	public void updateUsername(String username) {
+		this.setUsername(username);
+	}
+
+	/**
+	 * Updates user's email.
+	 * @param email
+	 */
+	public void updateEmail(String email) {
+		this.setEmail(email);
+	}
+}
