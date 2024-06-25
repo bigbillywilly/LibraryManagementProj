@@ -6,12 +6,10 @@ public abstract class User {
 	private String email;
 	private String name;
 	private int id;
+	private static int nextID = 1;
 
-	/**
-	* Constructor for a user that takes an id, name, usernawme, and email.
-	*\
-	public User(int id, String name, String username, String email) {
-		this.id = id;
+	public User(String name, String username, String email) {
+		this.id = nextID++;
 		this.username = username;
 		this.email = email;
 		this.name = name;
