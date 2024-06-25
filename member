@@ -1,0 +1,9 @@
+package libraryManageProj;
+
+public class member extends User {
+
+	public member(int id, String name, String username, String email) {
+		super(name, username, email);
+	}
+
+}
