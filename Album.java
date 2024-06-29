@@ -3,27 +3,27 @@ package librarymanageproj;
 import java.util.GregorianCalendar;
 
 /**
- * A class representing a book, holding data such as the title, author, isbn,
- * availability, date published, and genres.
+ * A class representing an album, holding data such as the title, artist,
+ * release date, label, availability and genres.
  * 
  * @authors Elijah Potter & William Ngo
  * @version June 27, 2024
  */
-public class Book {
+public class Album {
 	private String title;
-	private String author;
-	private String isbn;
-	private boolean avail;
-	private GregorianCalendar publishDate;
+	private String artist;
+	private GregorianCalendar releaseDate;
+	private String label;
 	private String[] genres;
+	private boolean avail;
 
-	public Book(String title, String author, String isbn, GregorianCalendar publishDate, String g1, String g2,
+	public Album(String title, String artist, GregorianCalendar releaseDate, String label, String g1, String g2,
 			String g3) {
 		this.title = title;
-		this.author = author;
-		this.isbn = isbn;
+		this.artist = artist;
+		this.label = label;
 		avail = true;
-		this.publishDate = publishDate;
+		this.releaseDate = releaseDate;
 
 		String[] genres = new String[3];
 		genres[0] = g1;
@@ -35,12 +35,12 @@ public class Book {
 		return title;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getArtist() {
+		return artist;
 	}
-
-	public String getIsbn() {
-		return isbn;
+	
+	public String getLabel() {
+		return label;
 	}
 
 	public Boolean getAvail() {
@@ -56,11 +56,10 @@ public class Book {
 	}
 
 	public GregorianCalendar getDate() {
-		return publishDate;
+		return releaseDate;
 	}
 
 	public String[] getGenres() {
 		return genres;
 	}
-
 }
