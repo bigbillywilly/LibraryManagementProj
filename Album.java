@@ -7,59 +7,33 @@ import java.util.GregorianCalendar;
  * release date, label, availability and genres.
  * 
  * @authors Elijah Potter & William Ngo
- * @version June 27, 2024
+ * @version July 5, 2024
  */
-public class Album {
-	private String title;
-	private String artist;
-	private GregorianCalendar releaseDate;
+public class Album extends Media {
 	private String label;
-	private String[] genres;
-	private boolean avail;
 
-	public Album(String title, String artist, GregorianCalendar releaseDate, String label, String g1, String g2,
-			String g3) {
-		this.title = title;
-		this.artist = artist;
+	/**
+	 * Album constructor
+	 * 
+	 * @param title       - The name of the media
+	 * @param creator     - The name of the main creator
+	 * @param releaseDate - The date of public release
+	 * @param g1          - First genre
+	 * @param g2          - Second genre
+	 * @param g3          - Third genre
+	 * @param label       - The name of the label
+	 */
+	public Album(String title, String creator, GregorianCalendar releaseDate, String g1, String g2, String g3,
+			String label) {
+		super(title, creator, releaseDate, g1, g2, g3);
 		this.label = label;
-		avail = true;
-		this.releaseDate = releaseDate;
-
-		String[] genres = new String[3];
-		genres[0] = g1;
-		genres[1] = g2;
-		genres[2] = g3;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public String getArtist() {
-		return artist;
-	}
-	
+	/**
+	 * Returns the label
+	 */
 	public String getLabel() {
 		return label;
 	}
 
-	public Boolean getAvail() {
-		return avail;
-	}
-
-	public void checkout() {
-		avail = false;
-	}
-
-	public void checkin() {
-		avail = true;
-	}
-
-	public GregorianCalendar getDate() {
-		return releaseDate;
-	}
-
-	public String[] getGenres() {
-		return genres;
-	}
 }

@@ -7,60 +7,32 @@ import java.util.GregorianCalendar;
  * availability, date published, and genres.
  * 
  * @authors Elijah Potter & William Ngo
- * @version June 27, 2024
+ * @version July 5, 2024
  */
-public class Book {
-	private String title;
-	private String author;
+public class Book extends Media {
 	private String isbn;
-	private boolean avail;
-	private GregorianCalendar publishDate;
-	private String[] genres;
 
-	public Book(String title, String author, String isbn, GregorianCalendar publishDate, String g1, String g2,
-			String g3) {
-		this.title = title;
-		this.author = author;
+	/**
+	 * Book constructor
+	 * 
+	 * @param title       - The name of the media
+	 * @param creator     - The name of the main creator
+	 * @param releaseDate - The date of public release
+	 * @param g1          - First genre
+	 * @param g2          - Second genre
+	 * @param g3          - Third genre
+	 * @param isbn        - The ISBN of the book
+	 */
+	public Book(String title, String author, GregorianCalendar publishDate, String g1, String g2, String g3,
+			String isbn) {
+		super(title, author, publishDate, g1, g2, g3);
 		this.isbn = isbn;
-		avail = true;
-		this.publishDate = publishDate;
-
-		String[] genres = new String[3];
-		genres[0] = g1;
-		genres[1] = g2;
-		genres[2] = g3;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public String getAuthor() {
-		return author;
-	}
-
+	/**
+	 * Returns the ISBN
+	 */
 	public String getIsbn() {
 		return isbn;
 	}
-
-	public Boolean getAvail() {
-		return avail;
-	}
-
-	public void checkout() {
-		avail = false;
-	}
-
-	public void checkin() {
-		avail = true;
-	}
-
-	public GregorianCalendar getDate() {
-		return publishDate;
-	}
-
-	public String[] getGenres() {
-		return genres;
-	}
-
 }
