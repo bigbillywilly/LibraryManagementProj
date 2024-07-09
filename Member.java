@@ -2,9 +2,9 @@ package libraryManageProj;
 import java.util.Calendar;
 import java.util.Date;
 
-public class member extends User {
+public class Member extends User {
 
-	public member(int id, String name, String username, String email) {
+	public Member(int id, String name, String username, String email) {
 		super(name, username, email);
 	}
 	
