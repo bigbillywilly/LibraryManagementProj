@@ -1,4 +1,4 @@
-package librarymanageproj;
+package libraryManageProj;
 
 import java.util.GregorianCalendar;
 
