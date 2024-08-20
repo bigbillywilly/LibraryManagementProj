@@ -12,6 +12,7 @@ public class Admin extends User {
 		super(name, username, email);
 		this.adminID = adminID;
 	}
+	//somewhere here we need to make it so admins can create other admins.
 
 	public String getAdminID() {
 		return this.adminID;
